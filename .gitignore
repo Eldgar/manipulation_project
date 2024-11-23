@@ -48,3 +48,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+universal_robot_ros2/
+ur3e_helper_scripts/
