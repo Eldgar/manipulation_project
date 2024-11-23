@@ -128,6 +128,34 @@ ament_target_dependencies(pick_and_place
 	moveit_ros_planning
 	control_msgs)
 
+add_executable(pick_and_place_sim
+    src/pick_and_place_sim.cpp)
+target_include_directories(pick_and_place_sim
+    PUBLIC include)
+ament_target_dependencies(pick_and_place_sim
+    ament_cmake
+	rclcpp
+	rclcpp_action
+	moveit_core
+	moveit_ros_planning_interface
+	interactive_markers
+	moveit_ros_planning
+	control_msgs)
+
+add_executable(pick_and_place_real
+    src/pick_and_place_real.cpp)
+target_include_directories(pick_and_place_real
+    PUBLIC include)
+ament_target_dependencies(pick_and_place_real
+    ament_cmake
+	rclcpp
+	rclcpp_action
+	moveit_core
+	moveit_ros_planning_interface
+	interactive_markers
+	moveit_ros_planning
+	control_msgs)
+
 install(TARGETS 
 	test_trajectory
 	test_trajectory2
@@ -136,6 +164,8 @@ install(TARGETS
 	approach_retreat
 	approach_retreat_real
 	pick_and_place
+	pick_and_place_sim
+	pick_and_place_real
     DESTINATION lib/${PROJECT_NAME}
 )
 

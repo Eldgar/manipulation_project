@@ -17,6 +17,7 @@ def generate_launch_description():
             {"trajectory_execution.allowed_execution_duration_scaling": 2.0,},
             {"publish_robot_description_semantic": True},
             {"use_sim_time": True},
+            {"planning_time": 10.0},
         ],
     )
 
